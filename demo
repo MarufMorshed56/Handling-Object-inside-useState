@@ -22,15 +22,15 @@ const Function = () => {
 
  return(
    <div className="stateDisplay" >
-            <div className="Items">
-               <button className="option" onClick={()=>handleOptions('adult','decrease')} >-</button>
+            <div>
+               <button onClick={()=>handleOptions('adult','decrease')}>decrease</button>
                <span>{`${state.adult}`}</span>  
-               <button className="option" onClick={()=>handleOptions('adult','increase')}>+</button> 
+               <button  onClick={()=>handleOptions('adult','increase')}>increase</button> 
             </div>   
-            <div className="Items">
-               <button className="option" onClick={()=>handleOptions('children','decrease')} >-</button>
+            <div>
+               <button  onClick={()=>handleOptions('children','decrease')} >decrease</button>
                <span>{`${state.children}`}</span>
-               <button className="option" onClick={()=>handleOptions('children','increase')}>+</button> 
+               <button  onClick={()=>handleOptions('children','increase')}>increase</button> 
             </div>     
                 
    </div>                                                                                                   
