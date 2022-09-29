@@ -1,6 +1,7 @@
 //  Handling-Object-inside-useState
 //  if React 'usestate' has object inside it as an initial value, then how to change/ update each value from of the object separately....  
 
+import React from 'react'
 import { useState } from "react";
 
 const Function = () => { 
