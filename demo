@@ -1,0 +1,39 @@
+//  Handling-Object-inside-useState
+//  if React 'usestate' has object inside it as an initial value, then how to change/ update each value from of the object separately....  
+
+import { useState } from "react";
+
+const Function = () => { 
+
+// <!-- setting up object in useState -->
+ const [state, setState ] = useState({
+    adult: 1,
+    children : 0,
+  })
+
+// <!-- handling the update funcion of the useState -->
+
+  const handleOptions = (name, action)=>{  
+    setState((previousValue)=>{ 
+      return { ...previousValue , [name]:action ==="increase" ? state[name] + 1 : state[name] - 1  }
+    }
+ )}
+
+ return(
+   <div className="stateDisplay" >
+            <div className="Items">
+               <button className="option" onClick={()=>handleOptions('adult','decrease')} >-</button>
+               <span>{`${state.adult}`}</span>  
+               <button className="option" onClick={()=>handleOptions('adult','increase')}>+</button> 
+            </div>   
+            <div className="Items">
+               <button className="option" onClick={()=>handleOptions('children','decrease')} >-</button>
+               <span>{`${state.children}`}</span>
+               <button className="option" onClick={()=>handleOptions('children','increase')}>+</button> 
+            </div>     
+                
+   </div>                                                                                                   
+ )
+}
+
+export default Function
